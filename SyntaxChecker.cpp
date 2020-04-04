@@ -11,6 +11,7 @@ void SyntaxChecker::checkSyntax(string fileInput)
   {
     if(!inFS)
     {
+      inFS.close();
       cout << "The file could not be found. Please type in another." << endl;
       cin >> fileName;
       inFS.open(fileName);
@@ -21,7 +22,6 @@ void SyntaxChecker::checkSyntax(string fileInput)
     }
     else
     {
-      inFS.open(fileName);
       fileCheck = true;
     }
   }
