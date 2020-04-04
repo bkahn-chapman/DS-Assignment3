@@ -14,10 +14,12 @@ template <class T>
 class GenStack
 {
   public:
+    //template class
     GenStack();
     GenStack(int maxSize);
     ~GenStack();
 
+    //functions
     void push(char data);
     char pop();
     bool isFull();
@@ -26,6 +28,7 @@ class GenStack
     void enlarge();
     int getSize();
 
+    //variables
     int size;
     int top;
 
@@ -33,6 +36,7 @@ class GenStack
     T *tempArray;
 };
 
+//generic stack
 template <class T>
 GenStack<T>::GenStack()
 {
@@ -41,6 +45,7 @@ GenStack<T>::GenStack()
   top = -1;
 }
 
+//stack with a given size
 template <class T>
 GenStack<T>::GenStack(int maxSize)
 {
@@ -49,12 +54,15 @@ GenStack<T>::GenStack(int maxSize)
   top = -1;
 }
 
+
+//deletes the stack
 template <class T>
 GenStack<T>::~GenStack()
 {
   cout << "The stack was deleted." << endl;
 }
 
+//pushes a value onto the stack
 template <class T>
 void GenStack<T>::push(char data)
 {
@@ -65,6 +73,7 @@ void GenStack<T>::push(char data)
   myArray[++top] = data;
 }
 
+//pops a value off of the stack
 template <class T>
 char GenStack<T>::pop()
 {
@@ -74,6 +83,7 @@ char GenStack<T>::pop()
   }
 }
 
+//peeks at the top value of the stack
 template <class T>
 char GenStack<T>::peek()
 {
@@ -83,18 +93,21 @@ char GenStack<T>::peek()
   }
 }
 
+//if the stack is full
 template <class T>
 bool GenStack<T>::isFull()
 {
   return (top == size-1);
 }
 
+//if the stack is empty
 template <class T>
 bool GenStack<T>::isEmpty()
 {
   return (top == -1);
 }
 
+//doubles the space of the stack when it is full
 template <class T>
 void GenStack<T>::enlarge()
 {
@@ -113,6 +126,7 @@ void GenStack<T>::enlarge()
     size = size * 2;
 }
 
+//gets the size of the stack
 template <class T>
 int GenStack<T>::getSize()
 {

@@ -15,8 +15,10 @@ using namespace std;
 class SyntaxChecker
 {
   public:
+      //function
       void checkSyntax(string fileInput);
 
+      //variables
       int lines;
       string fileName;
       bool fileCheck = false;
