@@ -1,3 +1,11 @@
+/*
+* Name: Benjamin Kahn
+* ID: 2316793
+* Class: CPSC-350-01
+* Assignment: Programming Assignment 3: Syntax Checker
+* About: SyntaxChecker.cpp checks the syntax of a given file from a user.
+*/
+
 #include "SyntaxChecker.h"
 
 void SyntaxChecker::checkSyntax(string fileInput)

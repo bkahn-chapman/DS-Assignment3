@@ -1,3 +1,11 @@
+/*
+* Name: Benjamin Kahn
+* ID: 2316793
+* Class: CPSC-350-01
+* Assignment: Programming Assignment 3: Syntax Checker
+* About: GenStack.h is a template class for a generic stack.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
