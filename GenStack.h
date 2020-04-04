@@ -16,6 +16,7 @@ class GenStack
     bool isEmpty();
     char peek();
     void enlarge();
+    int getSize();
 
     int size;
     int top;
@@ -49,9 +50,9 @@ GenStack<T>::~GenStack()
 template <class T>
 void GenStack<T>::push(char data)
 {
-  if(myArray.isFull())
+  if(isFull())
   {
-    myArray.enlarge();
+    enlarge();
   }
   myArray[++top] = data;
 }
@@ -59,7 +60,7 @@ void GenStack<T>::push(char data)
 template <class T>
 char GenStack<T>::pop()
 {
-  if(myArray.isEmpty())
+  if(!isEmpty())
   {
     return myArray[top--];
   }
@@ -68,9 +69,9 @@ char GenStack<T>::pop()
 template <class T>
 char GenStack<T>::peek()
 {
-  if(myArray.isEmpty() != -1)
+  if(!isEmpty())
   {
-    return myArray[top--];
+    return myArray[top];
   }
 }
 
@@ -102,4 +103,10 @@ void GenStack<T>::enlarge()
     }
     delete tempArray;
     size = size * 2;
+}
+
+template <class T>
+int GenStack<T>::getSize()
+{
+  return(top+1);
 }

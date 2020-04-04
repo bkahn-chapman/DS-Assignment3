@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include "GenStack.h"
 using namespace std;
 
 class SyntaxChecker
 {
   public:
-      SyntaxChecker();
-      SyntaxChecker(string fileName);
-      ~SyntaxChecker();
-
-      bool checkSyntax();
+      void checkSyntax(string fileInput);
 
       int lines;
       string fileName;
-      bool fileCheck;
+      bool fileCheck = false;
+      char first;
 };
